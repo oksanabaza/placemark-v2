@@ -5,6 +5,7 @@ const { Schema } = Mongoose;
 const donationSchema = new Schema({
   amount: Number,
   method: String,
+  img: String,
   donor: {
     type: Schema.Types.ObjectId,
     ref: "User",

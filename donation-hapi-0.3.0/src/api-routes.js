@@ -1,6 +1,8 @@
 import { userApi } from "./api/users-api.js";
 import { donationsApi } from "./api/donations-api.js";
 import { candidatesApi } from "./api/candidates-api.js";
+import { playlistApi } from "./api/playlist-api.js";
+import { trackApi } from "./api/track-api.js";
 
 export const apiRoutes = [
   { method: "GET", path: "/api/users", config: userApi.find },
@@ -13,10 +15,23 @@ export const apiRoutes = [
   { method: "GET", path: "/api/candidates/{id}/donations", config: donationsApi.findByCandidate },
   { method: "POST", path: "/api/candidates/{id}/donations", config: donationsApi.makeDonation },
   { method: "DELETE", path: "/api/donations", config: donationsApi.deleteAll },
+  
 
   { method: "GET", path: "/api/candidates", config: candidatesApi.find },
   { method: "GET", path: "/api/candidates/{id}", config: candidatesApi.findOne },
   { method: "POST", path: "/api/candidates", config: candidatesApi.create },
   { method: "DELETE", path: "/api/candidates/{id}", config: candidatesApi.deleteOne },
   { method: "DELETE", path: "/api/candidates", config: candidatesApi.deleteAll },
+
+  // { method: "POST", path: "/api/playlists", config: playlistApi.create },
+  // { method: "DELETE", path: "/api/playlists", config: playlistApi.deleteAll },
+  { method: "GET", path: "/api/playlists", config: playlistApi.find },
+  // { method: "GET", path: "/api/playlists/{id}", config: playlistApi.findOne },
+  // { method: "DELETE", path: "/api/playlists/{id}", config: playlistApi.deleteOne },
+  
+  { method: "GET", path: "/api/tracks", config: trackApi.find },
+  // { method: "GET", path: "/api/tracks/{id}", config: trackApi.findOne },
+  // { method: "POST", path: "/api/playlists/{id}/tracks", config: trackApi.create },
+  // { method: "DELETE", path: "/api/tracks", config: trackApi.deleteAll },
+  // { method: "DELETE", path: "/api/tracks/{id}", config: trackApi.deleteOne },
 ];

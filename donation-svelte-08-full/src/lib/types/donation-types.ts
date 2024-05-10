@@ -26,6 +26,11 @@ export interface Donation {
   donor: User | string;
   lat: number;
   lng: number;
+  img:string;
+}
+export interface Track {
+  title: string;
+  artist: string;
 }
 
 export interface DataSet {
